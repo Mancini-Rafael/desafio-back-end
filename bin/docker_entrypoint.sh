@@ -13,7 +13,7 @@ case "$COMMAND" in
   server)
     echo "=== RUNNING SERVER ==="
     rm -f /app/tmp/pids/server.pid
-    rails s -p 3000 -b 0.0.0.0
+    RAILS_ENV=development rails s -p 3000 -b 0.0.0.0
     ;;
   test)
     echo "=== RUNNING TEST SUITE ==="
