@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_05_212451) do
+ActiveRecord::Schema.define(version: 2020_06_06_011848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "operations", force: :cascade do |t|
+    t.bigint "report_id"
+    t.string "type"
+    t.datetime "date"
+    t.string "receiver_cpf"
+    t.string "card"
+    t.string "store_owner_name"
+    t.string "store_name"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "BRL", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_operations_on_report_id"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reports_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
