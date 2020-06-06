@@ -8,6 +8,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem "slim-rails"
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth-github'
 gem 'uglifier', '>= 1.3.0'

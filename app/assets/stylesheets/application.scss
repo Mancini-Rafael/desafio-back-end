@@ -9,7 +9,34 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  */
+ @import "bootstrap";
+
+// Welcome Page
+.welcome{
+  .col-6 {
+    margin-top: 50px;
+  }
+}
+
+// Devise Links
+.links {
+  width: 20%;
+  margin-left: 40%;
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+.sign-up, .log-in {
+  margin-bottom: 2%;
+  form {
+    width: 20%;
+    margin-left: 40%;
+    text-align: left;
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

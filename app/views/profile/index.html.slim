@@ -1,8 +1,9 @@
-h1
-  = "Welcome to the test"
-.
-  a
-    = link_to "Clique aqui para logar", new_user_session_path
-.
-  a
-    = link_to 'Clique aqui para se registrar', new_user_registration_path
+.welcome
+  .row
+    .col-12.text-center
+      h1.display-4 Welcome to the test webapp
+  .row
+    .col-6.text-right
+      = link_to 'Sign In', new_user_session_path, class: "btn btn-secondary"
+    .col-6.text-left
+      = link_to 'Sign Up', new_user_registration_path, class: "btn btn-secondary"
