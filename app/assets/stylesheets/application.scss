@@ -40,3 +40,22 @@
     }
   }
 }
+
+// Reports
+.reports-index, .reports-show {
+  table {
+    width: 40%;
+    margin-left: 30%;
+
+    .links div{
+      margin: 0 10px 0 10px;
+    }
+  }
+}
+
+.reports-show {
+  table {
+    width: 80%;
+    margin-left: 10%; 
+  }
+}

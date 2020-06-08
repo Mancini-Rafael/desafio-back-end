@@ -6,8 +6,8 @@
     .col-12
       .row
         .col-12.text-center
-          = link_to 'Create New Report', new_report_path
-          = link_to 'Sign Out', destroy_user_session_path, method: :delete
+          . = link_to 'Create New Report', new_report_path
+          . = link_to 'Sign Out', destroy_user_session_path, method: :delete
       .row.mt-3
         .col-12.text-center
           table.table.table-striped.table-hover.no-margins

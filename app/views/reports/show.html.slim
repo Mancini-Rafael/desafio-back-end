@@ -22,10 +22,10 @@
             tbody
               - @report.operations.each do |op|
                 tr
-                  th = op.mode.upcase
-                  th = op.date.strftime("%d/%m/%Y %H:%M:%S")
-                  th = op.amount.format
-                  th = op.receiver_cpf
-                  th = op.card
-                  th = op.store_owner_name
-                  th = op.store_name
+                  td = op.mode.upcase
+                  td = op.date.strftime("%d/%m/%Y %H:%M:%S")
+                  td = op.amount.format
+                  td = op.receiver_cpf
+                  td = op.card
+                  td = op.store_owner_name
+                  td = op.store_name
