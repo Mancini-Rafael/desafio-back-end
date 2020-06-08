@@ -11,6 +11,5 @@ echo "=== Building containers ==="
 docker-compose build app
 
 echo "=== Setting up on mode DEVELOPMENT ==="
-cp -f .env.development .env
 docker-compose run --rm --service-ports app ./bin/database_setup.sh
 echo "Setup Finished! Run \"docker-compose up\" up to start running"

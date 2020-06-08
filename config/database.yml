@@ -28,6 +28,10 @@ development:
   <<: *default
   database: app_development
 
+test:
+  <<: *default
+  database: app_test
+
 production:
   adapter: postgresql
   encoding: unicode

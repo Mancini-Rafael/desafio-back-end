@@ -3,3 +3,7 @@ bundle_cache/
 node_modules/
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+log/
+.byebug_history
+log/development.log
+storage/

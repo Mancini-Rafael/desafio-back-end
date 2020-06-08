@@ -18,10 +18,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'active_storage_validations'
+gem 'activerecord-import'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rubocop', '~> 0.84.0', require: false
 
 group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6'
 end

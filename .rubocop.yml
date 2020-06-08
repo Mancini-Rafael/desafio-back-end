@@ -1,0 +1,15 @@
+AllCops:
+  TargetRubyVersion: 2.4.2
+  Include:
+    - 'app/**/*.rb'
+
+  Exclude:
+    - 'config/**/*'
+    - 'bundle_cache/**/*'
+    - '/usr/local/bundle'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'node_modules/**/*'
+    - 'bin/**/*'
+    - 'public/**/*'
+    - 'lib/tasks/**/*'
