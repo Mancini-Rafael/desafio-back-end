@@ -1,24 +1,23 @@
+# frozen_string_literal: true
+
 class Operation < ApplicationRecord
   belongs_to :report
 
-  NON_VALIDATABLE_ATTRS = ["id", "created_at", "updated_at"]
-  VALIDATABLE_ATTRS = Operation.attribute_names.reject{|attr| NON_VALIDATABLE_ATTRS.include?(attr)}
-  ALLOWED_TYPES = %w(
-    debit
-    boleto
-    financing
-    credit
-    loan_receiver
-    sale
-    ted_receiver
-    doc_receiver
-    rent
-  ).freeze
-  
-  validates :type, inclusion: { in: ALLOWED_TYPES }
-  validates VALIDATABLE_ATTRS, presence: true
-  ALLOWED_TYPES.each do |s|
-    scope s, -> { where( type: s ) } 
+  OPERATION_MODE_CORRESPONDENCE = {
+    1 => 'debit',
+    2 => 'boleto',
+    3 => 'financing',
+    4 => 'credit',
+    5 => 'loan_receiver',
+    6 => 'sale',
+    7 => 'ted_receiver',
+    8 => 'doc_receiver',
+    9 => 'rent'
+  }.freeze
+
+  validates :mode, inclusion: { in: OPERATION_MODE_CORRESPONDENCE.values }
+  OPERATION_MODE_CORRESPONDENCE.values.each do |s|
+    scope s, -> { where(mode: s) }
   end
   monetize :amount_cents
 end

@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and
-  devise :database_authenticatable, :registerable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:github]
-
+  devise :database_authenticatable, :registerable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:github]
 
   has_many :reports
   has_many :operations, through: :reports
@@ -12,7 +13,7 @@ class User < ApplicationRecord
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
     end
   end
 end
