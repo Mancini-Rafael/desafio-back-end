@@ -1,0 +1,14 @@
+.row
+  .col-12.text-center
+    = form_for @report do |f|
+      - if @report.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@report.errors.count, "error")} prohibited this report from being saved:"
+          ul
+            - @report.errors.full_messages.each do |message|
+              li = message
+      .form-group
+        = f.label :raw_report, 'Arquivo  '
+        = f.file_field :raw_report
+      .actions.text-center
+        = f.submit "Submit report", class: 'btn btn-success'

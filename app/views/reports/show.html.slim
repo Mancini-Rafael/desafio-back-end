@@ -1,0 +1,31 @@
+.reports-show
+  .row
+    .col-12.text-center
+      h1.display-4 Listing Operations
+  .row.mt-3
+    .col-12
+      .row
+        .col-12.text-center
+          = link_to 'Back', reports_path
+      .row.mt-3
+        .col-12.text-center
+          table.table.table-striped.table-hover.no-margins
+            thead
+              tr
+                th Type
+                th Date
+                th Amount (R$)
+                th CPF of receiver
+                th Card used
+                th Store owner
+                th Store name
+            tbody
+              - @report.operations.each do |op|
+                tr
+                  th = op.mode.upcase
+                  th = op.date.strftime("%d/%m/%Y %H:%M:%S")
+                  th = op.amount.format
+                  th = op.receiver_cpf
+                  th = op.card
+                  th = op.store_owner_name
+                  th = op.store_name
